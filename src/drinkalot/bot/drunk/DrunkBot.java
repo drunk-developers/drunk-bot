@@ -1,3 +1,5 @@
+package drinkalot.bot.drunk;
+
 import org.jibble.pircbot.*;
 
 import java.util.Calendar;
@@ -5,6 +7,7 @@ import java.util.Calendar;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.Random;
 
 public class DrunkBot extends PircBot {
 
@@ -55,11 +58,12 @@ public class DrunkBot extends PircBot {
         String time = new java.util.Date().toString();
         Calendar now = Calendar.getInstance();
         Calendar nextFridayAt18PM = calculateNextFridayAt18PM();
+        Random generator = new Random();
 
-        if (sender.startsWith("alecs")) {
-            sendMessage(channel, getInsult());
+       if (generator.nextInt(10)<5 ){
+            sendMessage(channel, sender + ", " + getInsult());
             return;
-        }
+       }
 
         if (message.equalsIgnoreCase("time")) {
             sendMessage(channel, sender + ": The time is now " + time);

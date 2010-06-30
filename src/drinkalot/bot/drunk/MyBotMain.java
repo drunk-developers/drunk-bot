@@ -2,7 +2,6 @@ package drinkalot.bot.drunk;
 
 import java.io.FileInputStream;
 import java.util.Properties;
-import org.jibble.pircbot.*;
 
 public class MyBotMain {
     
